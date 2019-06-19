@@ -12,12 +12,15 @@ export const FETCH_FAILED = "FETCH_FAILED";
 // remember that now we have controll over our thunk-based action creator
 export const getCharacters = () => dispatch => {
   dispatch({ type: FETCH_START });
-  axios
-    .get("https://swapi.co/api/eople")
+  setTimeout(() => {
+    axios
+    .get("https://swapi.co/api/people")
     .then(res => {
       dispatch({ type: FETCH_SUCCESS, payload: res.data.results });
     })
     .catch(err => {
       dispatch({ type: FETCH_FAILED, payload: err });
     });
+  }, 3000)
+
 };
