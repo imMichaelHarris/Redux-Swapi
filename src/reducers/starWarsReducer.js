@@ -27,7 +27,7 @@ export const charsReducer = (state = initialState, action) => {
         return {
           ...state,
           fetching: false,
-          error: 'UH OH... REQUEST FAILED.'
+          error: `UH OH... REQUEST FAILED. - ${action.payload}` 
 
         }
 

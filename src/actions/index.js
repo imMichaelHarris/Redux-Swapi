@@ -18,6 +18,6 @@ export const getCharacters = () => dispatch => {
       dispatch({ type: FETCH_SUCCESS, payload: res.data.results });
     })
     .catch(err => {
-      dispatch({ type: FETCH_FAILED });
+      dispatch({ type: FETCH_FAILED, payload: err });
     });
 };
