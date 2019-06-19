@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import Loader from "react-loader-spinner"
+import Loader from "react-loader-spinner";
 
 import { CharacterList } from "../components";
-import {getCharacters} from '../actions'
+import { getCharacters } from "../actions";
 
 class CharacterListView extends React.Component {
   constructor() {
@@ -11,12 +11,12 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getCharacters()
+    this.props.getCharacters();
   }
 
   render() {
     if (this.props.fetching) {
-      // return something here to indicate that you are fetching data
+      return <Loader type="Puff" color="#00BFFF" height="100" width="100" />;
     }
     return (
       <div className="CharactersList_wrapper">
@@ -28,8 +28,8 @@ class CharacterListView extends React.Component {
 const mapStateToProps = state => {
   return {
     characters: state.charsReducer.characters
-  }
-}
+  };
+};
 
 // our mapStateToProps needs to have two properties inherited from state
 // the characters and the fetching boolean
