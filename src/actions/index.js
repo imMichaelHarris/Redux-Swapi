@@ -16,7 +16,7 @@ export const getCharacters = () => dispatch => {
     .get("https://swapi.co/api/people")
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCH_SUCCESS });
+      dispatch({ type: FETCH_SUCCESS, payload: res });
     })
     .catch(err => {
       console.log(err);

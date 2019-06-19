@@ -14,6 +14,12 @@ export const charsReducer = (state = initialState, action) => {
       return {
         ...state
       }
+      case FETCH_SUCCESS:
+        console.log(action)
+        return {
+          ...state,
+          characters: action.payload
+        }
     default:
       return state;
   }
