@@ -1,3 +1,5 @@
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAILED } from "../actions";
+
 import /* we need our action types here*/ "../actions";
 const initialState = {
   characters: []
